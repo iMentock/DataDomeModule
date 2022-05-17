@@ -89,13 +89,6 @@ app.delete("/cart/remove/all", async (req, res) => {
   res.send({ message: "All items deleted" })
 })
 
-// Update an item in the cart (not used)
-app.put("/:id", async (req, res) => {
-  const updatedCartItem = req.body
-  await updateCart(req.params.id, updatedCartItem)
-  res.send({ message: "Cart updated" })
-})
-
 // Start in memory MongoDB then the server
 startDB().then(async () => {
   await generateShoes()
