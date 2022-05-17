@@ -99,7 +99,7 @@ app.put("/:id", async (req, res) => {
 // Start in memory MongoDB then the server
 startDB().then(async () => {
   await generateShoes()
-  app.listen(3001, async () => {
+  app.listen(process.env.PORT || 3001, async () => {
     console.log("listening on port 3001")
   })
 })
